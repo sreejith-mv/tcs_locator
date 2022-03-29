@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{location?.location}}</ion-title>
+  </ion-toolbar>
+  <div id="map" #map></div>
+</ion-header>
+<ion-content class="home">
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="end">
+        <ion-icon name="business"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <p>TCS Center Name</p>
+        <h2>{{location.location}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="end" (click)="openMaps()">
+        <ion-icon name="location"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <p>Location</p>
+        <h2>{{location.geo}} - {{location.area}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="location.phone">
+      <ion-avatar slot="end" (click)="openCall()">
+        <ion-icon name="call"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <p>Phone</p>
+        <h2>{{location?.phone}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="location.email">
+      <ion-avatar slot="end" (click)="openMail()">
+        <ion-icon name="mail"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <p>Email</p>
+        <h2>{{location?.email}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="location.address">
+      <ion-label>
+        <p>Address</p>
+        <h2>{{location?.address}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="location.websites">
+      <ion-avatar slot="end" (click)="openWebsite()">
+        <ion-icon name="browsers"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <p>Website</p>
+        <h2>{{location.websites[0].url}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="location.officeType.length !==0">
+      <ion-label>
+        <p>Office Type</p>
+        <h2>{{location?.officeType.toString()}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

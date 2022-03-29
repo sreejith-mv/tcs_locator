@@ -1,0 +1,6 @@
+{
+	"appId": "com.tcs.locator",
+	"appName": "Locate TCS",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

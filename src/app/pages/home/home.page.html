@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <img class="logo" slot="start" src="assets/logo.png" alt="" />
+    <ion-buttons slot="end">
+      <ion-button> TCS Locations </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar
+      placeholder="Search"
+      [debounce]="250"
+      [(ngModel)]="query"
+    ></ion-searchbar>
+    <ion-select
+      slot="end"
+      value="all"
+      interface="popover"
+      class="area-select"
+      (ionChange)="onAreaChange($event)"
+    >
+      <ion-select-option class="area-select-options" value="all">All</ion-select-option>
+      <ion-select-option (click) = "alert()" class="area-select-options" *ngFor="let item of areaList" [value]="item"
+        >{{item}}</ion-select-option
+      >
+    </ion-select>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="locationList.length !== 0">
+    <ion-item
+      *ngFor="let locationObj of locationList | search: query"
+      (click)="onLocationClick(locationObj)"
+    >
+      <ion-label>
+        <p>{{locationObj.geo}} - {{locationObj.area}}</p>
+        <h2>{{locationObj.location}}</h2>
+      </ion-label>
+      <ion-chip *ngIf="locationObj.distance" slot="end">
+        <ion-label color="primary"
+          >{{locationObj.distance.toFixed()}} KM</ion-label
+        >
+      </ion-chip>
+    </ion-item>
+  </ion-list>
+  <ion-text color="message">{{errorMessage}}</ion-text>
+</ion-content>
+
+<!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="filter"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button><ion-icon name="filter"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+</ion-fab> -->
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-label class="text" slot="start"
+      >Sort by distance from my location</ion-label
+    >
+    <ion-toggle
+      slot="end"
+      class="sort-toggle"
+      [disabled]="locationList.length === 0"
+      color="success"
+      [(ngModel)]="isLocationSortEnabled"
+      (ionChange)="onSortClick()"
+    ></ion-toggle>
+  </ion-toolbar>
+</ion-footer>

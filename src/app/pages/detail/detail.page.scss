@@ -1,0 +1,13 @@
+#map {
+  height: 25vh;
+}
+
+ion-item {
+  ion-label {
+    h2 {
+      text-overflow: clip;
+      white-space: initial;
+      line-height: 1.5;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"appId": "com.tcs.locator",
+	"appName": "Locate TCS",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"server": {
+		"url": "http://localhost:8100"
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "name": "TCS_Locator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,30 @@
+ion-header {
+  .logo {
+    width: 120px;
+    margin: 5px;
+  }
+  ion-searchbar {
+    padding: 0;
+  }
+  ion-select {
+    margin-top: 7px;
+  }
+}
+
+ion-content {
+  .message {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 35%;
+    font-size: 14px;
+    color: gray;
+  }
+}
+
+ion-footer {
+  .text {
+    margin: 0 12px;
+    font-size: 14px;
+  }
+}

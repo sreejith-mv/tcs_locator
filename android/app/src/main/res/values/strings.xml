@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Locate TCS</string>
+    <string name="title_activity_main">Locate TCS</string>
+    <string name="package_name">com.tcs.locator</string>
+    <string name="custom_url_scheme">com.tcs.locator</string>
+</resources>
